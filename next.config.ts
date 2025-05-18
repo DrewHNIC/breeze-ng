@@ -1,6 +1,6 @@
-// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
@@ -20,7 +20,6 @@ const nextConfig = {
       },
     ],
   },
-
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -28,15 +27,5 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
 };
-
-
-const { withNetlify } = require('@netlify/next')
-
-module.exports = withNetlify({
-  reactStrictMode: true,
-  images: {
-    domains: ['https://supabase.com/dashboard/project/iucltqyclynvzjjexxdl/storage/buckets/vendor-images'], // allow remote images if needed
-  },
-})
 
 export default nextConfig;
